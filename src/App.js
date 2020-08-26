@@ -42,7 +42,7 @@ class App extends Component {
     console.log("clear list");
   };
   handleDelete = (id) => {
-    console.log(`handle edit ${id}`);
+    console.log(`handle Delete ${id}`);
   };
   handleEdit = (id) => {
     console.log(`edit edit ${id}`);
