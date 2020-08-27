@@ -40,20 +40,29 @@ class App extends Component {
   };
   clearList = () => {
     this.setState({
-      items: []
-    })
+      items: [],
+    });
   };
   handleDelete = (id) => {
-    const filteredItems = this.state.items.filter(item => item.id !== id);
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
+    console.log(filteredItems);
     this.setState({
-      items: filteredItems
-    })
+      items: filteredItems,
+    });
   };
   handleEdit = (id) => {
-    console.log(`edit edit ${id}`);
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      items: filteredItems,
+      item: selectedItem.title,
+      id: id,
+      editItem: true,
+    });
+    // console.log(selectedItem);
   };
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="container">
         <div className="row">
